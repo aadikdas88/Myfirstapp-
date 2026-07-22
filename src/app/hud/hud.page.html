@@ -1,0 +1,106 @@
+<ion-content fullscreen class="hud">
+
+  <div class="background-grid"></div>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+
+    <div class="logo">
+      🤖 JARVIS OS
+    </div>
+
+    <div class="clock">
+      <h2>{{ time }}</h2>
+      <p>{{ date }}</p>
+    </div>
+
+  </div>
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+
+    <h3>SYSTEM</h3>
+
+    <div class="item">
+      <span>🔋 Battery</span>
+      <span>{{ battery }}%</span>
+    </div>
+
+    <div class="item">
+      <span>🧠 CPU</span>
+      <span>{{ cpu }}%</span>
+    </div>
+
+    <div class="item">
+      <span>💾 RAM</span>
+      <span>{{ ram }}%</span>
+    </div>
+
+    <div class="item">
+      <span>📶 Network</span>
+      <span>{{ network }}</span>
+    </div>
+
+  </div>
+
+  <!-- CENTER -->
+  <div class="center">
+
+    <div class="reactor">
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring3"></div>
+      <div class="core"></div>
+    </div>
+
+    <h1>JARVIS</h1>
+
+    <p>{{ status }}</p>
+
+    <div class="mic-button" (click)="toggleListening()">
+      🎤
+    </div>
+
+    <div class="mic-status">
+      {{ listening ? 'Listening...' : 'Tap to Speak' }}
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <h3>AI STATUS</h3>
+
+    <div class="item">
+      🎤 Ready
+    </div>
+
+    <div class="item">
+      🌤 {{ weather }}
+    </div>
+
+    <div class="item">
+      💽 {{ storage }}
+    </div>
+
+    <div class="item">
+      🔔 No Alerts
+    </div>
+
+  </div>
+
+  <!-- BOTTOM DOCK -->
+  <div class="dock">
+
+    <button (click)="goHome()">🏠</button>
+
+    <button (click)="openAI()">🤖</button>
+
+    <button (click)="openApps()">📂</button>
+
+    <button (click)="openSettings()">⚙️</button>
+
+  </div>
+
+</ion-content>

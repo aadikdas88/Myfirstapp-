@@ -1,0 +1,40 @@
+<ion-content fullscreen class="chat-page">
+
+  <!-- Header -->
+  <div class="chat-header">
+    <h1>🤖 JARVIS</h1>
+    <p>Offline AI Core</p>
+  </div>
+
+  <!-- Messages -->
+  <div class="messages">
+
+    <div
+      *ngFor="let msg of messages"
+      class="message"
+      [class.user]="msg.sender === 'You'"
+      [class.jarvis]="msg.sender === 'Jarvis'">
+
+      <strong>{{ msg.sender }}</strong>
+      <p>{{ msg.text }}</p>
+
+    </div>
+
+  </div>
+
+  <!-- Input -->
+  <div class="input-bar">
+
+    <input
+      type="text"
+      [(ngModel)]="input"
+      placeholder="Ask Jarvis anything..."
+      (keyup.enter)="sendMessage()">
+
+    <button (click)="sendMessage()">
+      Send
+    </button>
+
+  </div>
+
+</ion-content>
